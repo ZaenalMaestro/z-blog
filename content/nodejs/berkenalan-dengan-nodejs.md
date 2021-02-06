@@ -14,7 +14,7 @@ command : `hugo new theme <nama-theme>`
   
 struktur folder layouts
 
-![struktur folder layouts](/img/nodejs/struktur-folder-layout.PNG)
+![struktur folder layouts](struktur-folder-layout.PNG)
 #### folder `_default`
 folder default merupakan folder default dari hugo yang berisi file
 - `baseof.html` merupakan file yang akan meload semua file didalam folder layouts atau biasa disebut sebagai tempalate, berikut scriptnya

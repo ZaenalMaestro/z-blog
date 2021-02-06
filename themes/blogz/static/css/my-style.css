@@ -2,3 +2,7 @@
    font-size: small;
 }
 
+section>article>div.highlight>pre {
+   border-radius: 10px;
+}
+
