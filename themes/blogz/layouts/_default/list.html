@@ -7,14 +7,11 @@
       {{range .Pages}}
       <div class="card mb-3">
          <div class="card-body">
-            <a href="{{.Permalink}}" class="text-decoration-none text-dark">
+            <a href="{{.Permalink}}" class="text-dark">
                <h4>{{.Title}}</h4>
             </a>
-            <p class="text-secondary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum consequuntur
-               accusantium aut
-               recusandae amet officiis consectetur facere non velit dolorum, modi, ipsum error distinctio eum
-               placeat ex debitis nam dolores.</p>
-            <span class="badge badge-success font-small">{{.PublishDate.Format "Jan 2, 2006"}}</span>
+            <p class="text-secondary">{{.Summary}}</p>
+            <span class="badge badge-dark font-small">{{.PublishDate.Format "Jan 2, 2006"}}</span>
          </div>
       </div>
       {{end}}

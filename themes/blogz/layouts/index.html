@@ -2,45 +2,18 @@
 <h3 class="text-center mb-5">Kategori Artikel</h3>
 <!-- isi artikel -->
 <div class="row row-cols-1 row-cols-md-3">
+   {{ range .Site.Data.categories}}
    <div class="col-sm-6 mb-4">
       <div class="card">
-         <img src="/img/coming-soon.jpg" class="card-img-top" alt="node js">
+         <img src="/img/{{.img}}" class="card-img-top" alt="js">
          <div class="card-body">
-            <a href="nodejs/">
-               <h5 class="card-title">Artikel Node Js</h5>
+            <a href="{{.section}}" class="text-dark">
+               <h5 class="card-title">{{.title}}</h5>
             </a>
-            <p class="card-text font-weight-light">This is a longer card with supporting text below as a natural
-               lead-in to additional
-               content. This content is a little bit longer.</p>
+            <p class="card-text font-weight-light">{{.desc}}</p>
          </div>
       </div>
    </div>
-   <div class="col-sm-6 mb-4">
-      <div class="card">
-         <img src="/img/expressjs.png" class="card-img-top" alt="express js">
-         <div class="card-body">
-            <a href="expressjs/">
-               <h5 class="card-title">Artikel Express Js</h5>
-            </a>
-            <p class="card-text font-weight-light">This is a longer card with supporting text below as a natural
-               lead-in to additional
-               content. This content is a little bit longer.</p>
-         </div>
-      </div>
-   </div>
-   <div class="col-sm-6 mb-4">
-      <div class="card">
-         <img src="/img/coming-soon.jpg" class="card-img-top" alt="js">
-         <div class="card-body">
-            <a href="blog/">
-               <h5 class="card-title">My Blog</h5>
-            </a>
-            <p class="card-text font-weight-light">This is a longer card with supporting text below as a natural
-               lead-in to additional
-               content. This content is a little bit longer.</p>
-         </div>
-      </div>
-   </div>
+   {{end}}
 </div>
-
 {{ end }}
