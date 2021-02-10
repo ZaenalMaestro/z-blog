@@ -2,7 +2,7 @@
 <div class="row justify-content-center">
    <div class="col-md-8">
 
-      <h1 class="mb-3"># Artikle {{.Title}}</h1>
+      <h1 class="mb-3"># {{.Title}}</h1>
 
       {{range .Pages}}
       <div class="card mb-3">
@@ -14,7 +14,7 @@
                accusantium aut
                recusandae amet officiis consectetur facere non velit dolorum, modi, ipsum error distinctio eum
                placeat ex debitis nam dolores.</p>
-            <span class="badge badge-secondary font-small">Jan 16 2021</span>
+            <span class="badge badge-success font-small">{{.PublishDate.Format "Jan 2, 2006"}}</span>
          </div>
       </div>
       {{end}}

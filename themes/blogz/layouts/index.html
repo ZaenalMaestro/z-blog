@@ -4,9 +4,11 @@
 <div class="row row-cols-1 row-cols-md-3">
    <div class="col-sm-6 mb-4">
       <div class="card">
-         <a href="nodejs/"><img src="/img/nodejs.png" class="card-img-top" alt="express js"></a>
+         <img src="/img/coming-soon.jpg" class="card-img-top" alt="node js">
          <div class="card-body">
-            <h5 class="card-title">Artikel Node Js</h5>
+            <a href="nodejs/">
+               <h5 class="card-title">Artikel Node Js</h5>
+            </a>
             <p class="card-text font-weight-light">This is a longer card with supporting text below as a natural
                lead-in to additional
                content. This content is a little bit longer.</p>
@@ -15,9 +17,11 @@
    </div>
    <div class="col-sm-6 mb-4">
       <div class="card">
-         <a href="expressjs/"><img src="/img/express.png" class="card-img-top" alt="express js"></a>
+         <img src="/img/expressjs.png" class="card-img-top" alt="express js">
          <div class="card-body">
-            <h5 class="card-title">Artikel Express Js</h5>
+            <a href="expressjs/">
+               <h5 class="card-title">Artikel Express Js</h5>
+            </a>
             <p class="card-text font-weight-light">This is a longer card with supporting text below as a natural
                lead-in to additional
                content. This content is a little bit longer.</p>
@@ -26,9 +30,11 @@
    </div>
    <div class="col-sm-6 mb-4">
       <div class="card">
-         <a href="blog/"><img src="/img/js.png" class="card-img-top" alt="express js"></a>
+         <img src="/img/coming-soon.jpg" class="card-img-top" alt="js">
          <div class="card-body">
-            <h5 class="card-title">My Blog</h5>
+            <a href="blog/">
+               <h5 class="card-title">My Blog</h5>
+            </a>
             <p class="card-text font-weight-light">This is a longer card with supporting text below as a natural
                lead-in to additional
                content. This content is a little bit longer.</p>
@@ -37,21 +43,4 @@
    </div>
 </div>
 
-<h3 class="text-center mb-5">Semua Artikel</h3>
-<!-- isi artikel -->
-<div class="row row-cols-1 row-cols-md-3">
-   {{ range .Site.RegularPages}}
-   <div class="col-sm-6 mb-4">
-      <div class="card">
-         <a href="{{.Permalink}}"><img src="/img/js.png" class="card-img-top" alt="express js"></a>
-         <div class="card-body">
-            <h5 class="card-title">{{.Title}}</h5>
-            <p class="card-text font-weight-light">This is a longer card with supporting text below as a natural
-               lead-in to additional
-               content. This content is a little bit longer.</p>
-         </div>
-      </div>
-   </div>
-   {{end}}
-</div>
 {{ end }}

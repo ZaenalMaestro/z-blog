@@ -1,3 +1,0 @@
----
-thumb: "/img/js.png"
---- 
