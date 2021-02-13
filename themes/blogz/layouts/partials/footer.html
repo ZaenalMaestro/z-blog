@@ -27,10 +27,14 @@
 <script>
    hljs.initHighlightingOnLoad();
    const defaultSyntaxBackgruond = document.getElementsByTagName('pre')
-
+   const codes = document.getElementsByTagName('code')
    // delete default style hugo
    for(pre of defaultSyntaxBackgruond){
       pre.removeAttribute('style')
       pre.style.borderRadius = "5px"
+   }
+   // delete default style hugo
+   for(code of codes){
+      code.setAttribute('class', 'code-border')
    }
 </script>

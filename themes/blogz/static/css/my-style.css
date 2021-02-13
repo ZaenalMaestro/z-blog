@@ -1,3 +1,18 @@
+@font-face{
+   font-family: "jost";
+   src: url(/Jost/Jost-VariableFont_wght.ttf),
+   url(/Jost/Jost-Italic-VariableFont_wght.ttf);
+}
+
+h1,h2,h3,h4,h5,h6{
+   font-family: "jost";
+   font-weight: bolder;
+}
+
+p {
+   font-family: "jost";
+   font-weight: 300;
+}
 .font-small {
    font-size: small;
 }

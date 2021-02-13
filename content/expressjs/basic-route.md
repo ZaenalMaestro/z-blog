@@ -119,3 +119,5 @@ app.route('/users')
 cukup dengan membuat satu route path `/user`, 
 kita sudah bisa melakukan request menggunakan method `GET`, `POST`, `PUT`, `DELETE`
 
+--->> Materi Selanjutnya [4. Eexpress - Route Modular](/expressjs/route-modular/)
+

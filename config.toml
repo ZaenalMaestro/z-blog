@@ -3,3 +3,8 @@ languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "blogz"
 summaryLength = 1
+
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+useHLJS = true
+

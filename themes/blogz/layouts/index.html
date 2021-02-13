@@ -1,14 +1,14 @@
 {{define "main"}}
-<h3 class="text-center mb-5">Kategori Artikel</h3>
+<h1 class="text-center mb-5 font-weight-bolder">Kategori Artikel</h1>
 <!-- isi artikel -->
 <div class="row row-cols-1 row-cols-md-3">
    {{ range .Site.Data.categories}}
    <div class="col-sm-6 mb-4">
-      <div class="card">
+      <div class="card shadow">
          <img src="/img/{{.img}}" class="card-img-top" alt="js">
          <div class="card-body">
             <a href="{{.section}}" class="text-dark">
-               <h5 class="card-title">{{.title}}</h5>
+               <h4 class="card-title">{{.title}}</h4>
             </a>
             <p class="card-text font-weight-light">{{.desc}}</p>
          </div>
