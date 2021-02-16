@@ -125,7 +125,7 @@ sekarang route express kita sudah semakin modular
 
 cukup sekian pembahasan tentang route modular dan semoga bermanfaat. 
 
---->> Materi Selanjutnya [4. express - Midleware](/expressjs/middleware/)
+--->> Materi Selanjutnya [4. express - Middleware](/expressjs/middleware/)
 
 
 
