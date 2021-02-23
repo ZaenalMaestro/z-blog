@@ -12,16 +12,16 @@ tags:
 - passport js
 ---
 
-Passport js merupakan sistem autentikasi sederhana yang dapat melakukan autentikasi menggunakan username dan password, facebook, twitter, google dan lain-lain, untuk melihat autentikasi apa saja yang bisa digunakan, silahkan kujungi [passport.js](http://passportjs.com)
+Passport js merupakan sistem autentikasi sederhana yang dapat melakukan autentikasi menggunakan username dan password, facebook, twitter, google dan lain-lain, untuk melihat autentikasi apa saja yang bisa digunakan, silahkan kujungi [passportjs.org](http://passportjs.org)
 
 ### install package
-di artikle ini kita akan melakukan autentikesi menggunakan username dan password, berikut ini package yang dibutuhkan:
-- passport
-- passport-local
-- ejs
-- express
-- express-flash
-- express-session
+di artikle ini kita akan melakukan autentikesi passportjs menggunakan passport-local (autentikasi username dan password). Berikut ini beberapa package yang dibutuhkan:
+- `passport`: sistem autentikasi dimiddleware
+- `passport-local`: sistem autentikasi `passportjs` menggunakan username dan passoword
+- `ejs`: view engine untuk membuat tampilan dengan data yang dinamis
+- `express`: framewordk untuk node-js
+- `express-flash`: untuk membuat flash message
+- `express-session`: untuk membuat session
 
 pertama initialisasi aplikasi yang kita buat dengan menggunakan perintah:
 ```bash
@@ -79,7 +79,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(flash())
 
 // inisialsisasi session
-app.use(session({
+app.use(session({****
   secret: 'top-secret',
   saveUninitialized: false,
   resave: false
@@ -164,6 +164,20 @@ menyimpan data user yang berhasil di autentikasi kedalam session cookie
 passport.deserializeUser((id, done) => done(null, userModel.findUserById(id)))
 ```
 
+Selanjutnya import configurasi `passportjs`, buka file `index.js` dan tambahkan kode berikut
+```javascript
+require('./config-passport')
+```
+berikut potongan kode di `index.js` setelan diimport
+```javascript
+const express = require('express')
+const app = express()
+const session = require('express-session')
+const flash = require('express-flash')
+const passport = require('passport')
+require('./config-passport')
+```
+
 ### buat views
 selanjutnya buat directory baru dengan nama `views`, dalamanya buat dua file yaitu `index.ejs` dan `login.ejs`
 
@@ -195,16 +209,16 @@ perhatikan potongan kode berikut
   <%= messages.error %>
 <%}%>
 ```
-kode ini akan menampilkan flash message yang telah dibuat pada file `config-passport.js` jika terjadi user gagal diautentikasi
+kode ini akan menampilkan flash message yang telah dibuat pada file `config-passport.js` jika user gagal diautentikasi
 
-pada file `index.js` tambahkan kode berikut
+pada file `index.ejs` tambahkan kode berikut
 ```html
 <h1>Welcome <%=name%></h1>
 ```
 `<%=name>` akan menampilakan nama user yang berhasil login
 
-### memambahkan autentikasi pada route
-selanjutnya buka kembali file `index.js` dan tambakan kode berikut dibawah komentar `// route`
+### menambahkan autentikasi pada route
+selanjutnya buka kembali file `index.js`, tambakan kode berikut dibawah komentar `// route`
 ```javascript
 app.get('/login', (req, res) => {
   res.render('login')
@@ -233,7 +247,7 @@ app.post('/login', passport.authenticate('local', {
 }))
 ```
 pada potongan kode kita diatas kita akan melakukan autentikasi user yang akan login,
-jika berhasil diautentikasi maka akan diarahkan kehalaman `index` jika gagal akan kembalikan kehalaman login, 
+jika berhasil diautentikasi, akan diarahkan kehalaman `index.ejs` jika gagal akan di redirect kehalaman `login.ejs`, 
 
 untuk `failureFlash: true` berfungsi menampikan pesan kesalahan yang telah kita buat pada file `config-passport.js`
 
@@ -245,11 +259,11 @@ jika kita input username atau password yang salah, akan menampilkan pesan kesala
 
 {{<image src="/expressjs/auth-password-salah.PNG" alt="image">}}
 
-jika berhasil diautentikasi, akan diarahkan kehalaman `index`
+jika berhasil diautentikasi, akan diarahkan kehalaman `index.ejs`
 {{<image src="/expressjs/auth-index.PNG" alt="image">}}
 
-### membuat meddleware untuk cek status autentikasi
-agar user tidak dapat mengakses halaman index jika belum login, kita buat middleware, tambahkan middlewre berikut file `index.js`
+### membuat middleware untuk cek status autentikasi
+agar user yang belum login tidak dapat mengakses halaman `index.ejs`, kita perlu membuat middleware. Tambahkan fungsi middlewre berikut file `index.js`
 ```javascript
 function checkAuthenticated(req, res, next) {
   // jika telah diautentikasi lanjutkan ke halaman index
@@ -296,6 +310,7 @@ app.get('/logout',checkNotAuthenticated, (req, res) => {
   req.logOut()
   res.redirect('/login')
 })
+```
 
 kemudian buka file `index.ejs` tambahkan kode berikut
 ```html
