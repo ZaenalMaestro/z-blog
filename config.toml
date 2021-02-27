@@ -7,4 +7,5 @@ summaryLength = 1
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 useHLJS = true
+pluralizelisttitles = false
 

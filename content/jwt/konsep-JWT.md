@@ -4,10 +4,10 @@ date: 2021-02-26T20:45:52+08:00
 draft: false
 author: "Zaenal"
 categories: 
-- 
-tags:
 - JWT
-- JSON
+tags:
+- jwt
+- json
 ---
 
 JSON Web Token (JWT) merupakan standar keamanan transmisi informasi menggunakan format `JSON`
@@ -99,8 +99,13 @@ jika token valid, user diizinkan mengakses route API untuk mendapat informasi da
 
 Cukup sekian pembahasan konsep JSON web token, jika ada pertanyaan silahkan tuliskan dikolom komentar
 
-Sumber Referensi:
-- [Dokumentasi resmi JSON web token](https://jwt.io/introduction)
+##### Artikel selanjutnya
+
+--->> [Part 2 - Implementasi JSON Web Token Menggunakan Node Js](/jwt/implementasi-jwt-menggunakan-nodejs/)
+
+
+##### Sumber Referensi:
+--->> [Dokumentasi resmi JSON web token](https://jwt.io/introduction)
 
 
 
